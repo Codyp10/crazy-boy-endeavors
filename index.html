@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crazy Boy Endeavors | Custom Fabrication &amp; Welding | Falling Waters, WV</title>
+  <meta name="description" content="Custom fabrication, welding, and tough builds by Brian Wuerstlin in Falling Waters, West Virginia. Dump trailers, V-plows, hybrid mowers, hardscaping, and anything you can dream up. Honest work that gets it done.">
+  <meta name="theme-color" content="#18181b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%2318181b'/%3E%3Ctext x='50' y='68' font-size='52' font-weight='700' text-anchor='middle' fill='%23f97316' font-family='system-ui,sans-serif'%3ECB%3C/text%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+    
+    :root {
+      --orange: #f97316;
+    }
+    
+    body {
+      font-family: 'Inter', system_ui, sans-serif;
+    }
+    
+    .heading-font {
+      font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    .nav-link {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .nav-link:hover {
+      color: #f97316;
+    }
+
+    .work-card {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                  box-shadow 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    
+    .work-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .modal {
+      animation: modalPop 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+    }
+
+    @keyframes modalPop {
+      from { opacity: 0; transform: translateY(20px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .service-card {
+      transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: #f97316;
+    }
+
+    .process-step {
+      transition: all 0.3s ease;
+    }
+
+    .tough-btn {
+      transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tough-btn:after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -100%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+      );
+      transition: 0.6s;
+    }
+    
+    .tough-btn:hover:after {
+      left: 200%;
+    }
+
+    .portfolio-img {
+      transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    
+    .work-card:hover .portfolio-img {
+      transform: scale(1.08);
+    }
+
+    .stat {
+      font-feature-settings: "tnum";
+    }
+
+    .dark-steel {
+      background-color: #18181b;
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+  <!-- Navbar -->
+  <nav class="bg-zinc-950/95 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="px-6 lg:px-10 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-x-3">
+          <div class="w-9 h-9 bg-orange-600 rounded flex items-center justify-center">
+            <span class="text-white font-bold text-2xl tracking-[-2px]">CB</span>
+          </div>
+          <div>
+            <div class="font-semibold text-2xl tracking-[-1.5px] heading-font">CRAZY BOY</div>
+            <div class="text-[10px] text-zinc-400 -mt-1 tracking-[3px]">ENDEAVORS</div>
+          </div>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+          <a href="#about" class="nav-link text-zinc-300 hover:text-white">About</a>
+          <a href="#work" class="nav-link text-zinc-300 hover:text-white">Work</a>
+          <a href="#services" class="nav-link text-zinc-300 hover:text-white">Services</a>
+          <a href="#process" class="nav-link text-zinc-300 hover:text-white">Process</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-x-3">
+          <a href="tel:+1-240-818-1903" 
+             class="px-5 py-2.5 text-sm font-semibold bg-white text-zinc-950 rounded-full flex items-center gap-x-2 hover:bg-zinc-100 transition-colors">
+            <i class="fa-solid fa-phone"></i>
+            <span>240-818-1903</span>
+          </a>
+          <a href="#contact" 
+             class="px-5 py-2.5 text-sm font-semibold border border-zinc-700 hover:bg-zinc-900 rounded-full transition-colors">
+            Start a Project
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn"
+                class="md:hidden w-11 h-11 flex items-center justify-center text-2xl text-zinc-300 hover:text-white"
+                aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-zinc-950">
+      <div class="px-6 py-8 flex flex-col gap-y-4 text-lg font-medium">
+        <a href="#about" class="mobile-link py-1">About Brian</a>
+        <a href="#work" class="mobile-link py-1">Featured Work</a>
+        <a href="#services" class="mobile-link py-1">What I Build</a>
+        <a href="#process" class="mobile-link py-1">How It Works</a>
+        <a href="#contact" class="mobile-link py-1">Contact</a>
+        
+        <div class="pt-4 border-t border-zinc-800 flex flex-col gap-y-3">
+          <a href="tel:+1-240-818-1903" 
+             class="flex items-center justify-center gap-x-2 bg-white text-zinc-950 font-semibold py-3.5 rounded-2xl">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call 240-818-1903</span>
+          </a>
+          <a href="#contact" 
+             class="flex items-center justify-center border border-zinc-700 py-3.5 rounded-2xl font-medium">
+            Start Your Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="relative h-[100dvh] min-h-[620px] flex items-center justify-center overflow-hidden">
+    <img src="assets/images/hero.jpg" 
+         alt="Brian Wuerstlin standing beside a custom 16-foot dual-axle steel dump trailer he is building inside his clean West Virginia fabrication shop at golden hour, with rolling hills visible through the open bay door"
+         class="absolute inset-0 w-full h-full object-cover">
+    
+    <!-- Strong gradient overlays for readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/75"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/30"></div>
+
+    <div class="relative z-10 max-w-screen-2xl mx-auto px-6 text-center">
+      <div class="max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-x-2 px-4 py-1 rounded-full bg-white/10 backdrop-blur border border-white/20 mb-6">
+          <div class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+          <span class="text-sm font-medium tracking-widest text-white/90">FALLING WATERS, WEST VIRGINIA</span>
+        </div>
+        
+        <h1 class="text-6xl md:text-7xl lg:text-7xl font-semibold tracking-[-3.5px] heading-font leading-[0.92] mb-4">
+          WILD IDEAS.<br>
+          <span class="text-orange-500">SOLID STEEL.</span>
+        </h1>
+        
+        <p class="max-w-lg mx-auto text-xl md:text-2xl text-zinc-200/90 tracking-[-0.3px] mb-10">
+          Custom fabrication and welding that actually works.<br>
+          Brian Wuerstlin gets it done.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#work" 
+             class="tough-btn group w-full sm:w-auto inline-flex items-center justify-center gap-x-3 bg-white text-zinc-950 text-lg font-semibold px-9 py-4 rounded-2xl hover:bg-orange-50 transition-all active:scale-[0.985]">
+            <span>See the Work</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition"></i>
+          </a>
+          <a href="tel:+1-240-818-1903" 
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-x-3 border border-white/70 hover:bg-white/10 text-lg font-semibold px-8 py-4 rounded-2xl transition-all">
+            <i class="fa-solid fa-phone"></i>
+            <span>240-818-1903</span>
+          </a>
+        </div>
+        
+        <div class="mt-8 text-xs tracking-[2px] text-white/70">10 YEARS • CUSTOM TRAILERS • PLOWS • MOWERS • HARDSCAPING</div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/70 text-xs tracking-[3px]">
+      <span>SCROLL TO EXPLORE</span>
+      <i class="fa-solid fa-chevron-down mt-1.5 text-base"></i>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="max-w-screen-2xl mx-auto px-6 lg:px-10 pt-20 pb-16">
+    <div class="grid md:grid-cols-12 gap-x-10 lg:gap-x-16 items-center">
+      <!-- Portrait -->
+      <div class="md:col-span-5 lg:col-span-5 mb-10 md:mb-0">
+        <div class="relative aspect-[3/3.6] rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl">
+          <img src="assets/images/portrait.jpg" 
+               alt="Honest portrait of Brian Wuerstlin, a skilled 35-year-old American metal fabricator from West Virginia. Short dark hair, light stubble, wearing a practical work shirt, standing in his shop holding a piece of steel and looking directly at the camera with a capable, trustworthy expression."
+               class="w-full h-full object-cover" loading="lazy" decoding="async">
+          <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <div class="text-sm opacity-75">Brian Wuerstlin</div>
+            <div class="text-xl font-semibold tracking-tight">Owner &amp; Fabricator</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story -->
+      <div class="md:col-span-7 lg:col-span-7">
+        <div class="max-w-2xl">
+          <div class="uppercase tracking-[3px] text-orange-500 text-sm font-semibold mb-3">THE MAN BEHIND THE TORCH</div>
+          <h2 class="heading-font text-5xl tracking-[-2.5px] leading-none mb-8">Honest work.<br>Real results.</h2>
+          
+          <div class="space-y-5 text-lg text-zinc-300 leading-relaxed">
+            <p>For the past ten years, people around the Eastern Panhandle have called Brian when they need something built — really built. Not mass-produced. Not half-assed. The right way.</p>
+            
+            <p>He’s the guy who took a Grave and a John Deere zero-turn and turned them into one legendary hybrid mower. The guy who fabricates entire 25-foot dump trailers from scratch, complete with hydraulics and state-inspection wiring. The guy who builds V-plows that actually articulate and survive real winters.</p>
+            
+            <p class="font-medium text-white">"If you can think it up, I’ll make it happen."</p>
+          </div>
+
+          <div class="mt-8 flex items-center gap-x-4 text-sm">
+            <div class="px-5 py-2 bg-zinc-900 border border-zinc-800 rounded-2xl flex items-center gap-x-2">
+              <i class="fa-solid fa-map-marker-alt text-orange-500"></i>
+              <span>Falling Waters, WV</span>
+            </div>
+            <div class="px-5 py-2 bg-zinc-900 border border-zinc-800 rounded-2xl">
+              Serving up to 60 miles
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="bg-zinc-900 py-16 border-y border-zinc-800">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10">
+        <div>
+          <div class="uppercase tracking-[3px] text-orange-500 text-sm font-semibold">WHAT I ACTUALLY DO</div>
+          <h3 class="heading-font text-5xl tracking-[-2px] mt-2">Capabilities</h3>
+        </div>
+        <p class="mt-3 lg:mt-0 max-w-md text-zinc-400">From one-off wild ideas to production-grade equipment — if it’s metal and it needs to work, I can build it.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+        <!-- Service cards -->
+        <div class="service-card group bg-zinc-950 border border-zinc-800 hover:border-orange-600 p-7 rounded-3xl">
+          <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 text-orange-500">
+            <i class="fa-solid fa-truck-pickup text-2xl"></i>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight mb-2">Custom Dump Trailers</h4>
+          <p class="text-zinc-400 text-[15px]">Full scratch builds — 16ft, 25ft, dual-axle, hydraulic dump. Frame, bed, wiring, inspection ready.</p>
+        </div>
+
+        <div class="service-card group bg-zinc-950 border border-zinc-800 hover:border-orange-600 p-7 rounded-3xl">
+          <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 text-orange-500">
+            <i class="fa-solid fa-snowplow text-2xl"></i>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight mb-2">V-Plows &amp; Snow Equipment</h4>
+          <p class="text-zinc-400 text-[15px]">Heavy plate steel with articulating hydraulic wings. Built for real winters, not catalogs.</p>
+        </div>
+
+        <div class="service-card group bg-zinc-950 border border-zinc-800 hover:border-orange-600 p-7 rounded-3xl">
+          <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 text-orange-500">
+            <i class="fa-solid fa-mower text-2xl"></i>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight mb-2">Custom Mowers &amp; Equipment</h4>
+          <p class="text-zinc-400 text-[15px]">Hybrid zero-turns, reinforced decks, and anything that needs to cut better than factory.</p>
+        </div>
+
+        <div class="service-card group bg-zinc-950 border border-zinc-800 hover:border-orange-600 p-7 rounded-3xl">
+          <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 text-orange-500">
+            <i class="fa-solid fa-hard-hat text-2xl"></i>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight mb-2">Hardscaping &amp; Pool Steel</h4>
+          <p class="text-zinc-400 text-[15px]">Custom planters, railings, structural features, and architectural steel for landscaping pros.</p>
+        </div>
+
+        <div class="service-card group bg-zinc-950 border border-zinc-800 hover:border-orange-600 p-7 rounded-3xl">
+          <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 text-orange-500">
+            <i class="fa-solid fa-wrench text-2xl"></i>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight mb-2">Welding &amp; Mobile Repair</h4>
+          <p class="text-zinc-400 text-[15px]">Shop or on-site. MIG, TIG, structural. If it’s broken or needs reinforcing, I’ll make it right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Work -->
+  <section id="work" class="max-w-screen-2xl mx-auto px-6 lg:px-10 pt-20 pb-16">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-9">
+      <div>
+        <div class="uppercase tracking-[3px] text-orange-500 text-sm font-semibold">PROOF IN THE STEEL</div>
+        <h3 class="heading-font text-5xl tracking-[-2px] mt-1">Featured Work</h3>
+      </div>
+      <p class="text-zinc-400 mt-2 lg:mt-0 max-w-xs">Every piece started as an idea and ended as something that actually works.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <!-- Work Card 1 -->
+      <div onclick="showProject(0)" class="work-card group cursor-pointer bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col">
+        <div class="relative aspect-[16/10] overflow-hidden bg-zinc-800">
+          <img src="assets/images/trailer-16.jpg" alt="Brand new custom 16-foot dual-axle heavy duty steel dump trailer with clean professional welds and hydraulic lift, sitting on gravel outside the shop at golden hour in West Virginia" class="portfolio-img absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex-1">
+            <div class="uppercase text-orange-500 text-xs tracking-widest mb-1">CURRENT BUILD</div>
+            <h4 class="font-semibold text-2xl tracking-[-0.5px]">16-Foot Dual-Axle Dump Trailer</h4>
+            <p class="text-zinc-400 mt-2 text-[15px]">Full scratch build: I-beam frame, bed, hydraulics, and complete wiring for state inspection.</p>
+          </div>
+          <div class="mt-5 inline-flex items-center text-sm text-orange-500 group-hover:gap-x-2 gap-x-1 transition-all">
+            View details <i class="fa-solid fa-arrow-right ml-1"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Card 2 -->
+      <div onclick="showProject(1)" class="work-card group cursor-pointer bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col">
+        <div class="relative aspect-[16/10] overflow-hidden bg-zinc-800">
+          <img src="assets/images/v-plow.jpg" alt="Custom heavy-duty V-plow with articulating hydraulic wings mounted on a pickup truck, thick plate steel construction with professional welds, photographed on a rural West Virginia road" class="portfolio-img absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex-1">
+            <div class="uppercase text-orange-500 text-xs tracking-widest mb-1">WINTER WORKHORSE</div>
+            <h4 class="font-semibold text-2xl tracking-[-0.5px]">Articulating V-Plow</h4>
+            <p class="text-zinc-400 mt-2 text-[15px]">Built from scratch with hydraulic wings. Handles the worst the panhandle has to offer.</p>
+          </div>
+          <div class="mt-5 inline-flex items-center text-sm text-orange-500 group-hover:gap-x-2 gap-x-1 transition-all">
+            View details <i class="fa-solid fa-arrow-right ml-1"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Card 3 -->
+      <div onclick="showProject(2)" class="work-card group cursor-pointer bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col">
+        <div class="relative aspect-[16/10] overflow-hidden bg-zinc-800">
+          <img src="assets/images/mower-hybrid.jpg" alt="One-of-a-kind custom hybrid zero-turn mower built by combining a Grave and John Deere platform with extensive custom steel fabrication, sitting on a lush West Virginia lawn at sunset" class="portfolio-img absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex-1">
+            <div class="uppercase text-orange-500 text-xs tracking-widest mb-1">LEGENDARY BUILD</div>
+            <h4 class="font-semibold text-2xl tracking-[-0.5px]">Hybrid Zero-Turn Mower</h4>
+            <p class="text-zinc-400 mt-2 text-[15px]">Grave + John Deere, re-engineered into the best mower most people have ever seen.</p>
+          </div>
+          <div class="mt-5 inline-flex items-center text-sm text-orange-500 group-hover:gap-x-2 gap-x-1 transition-all">
+            View details <i class="fa-solid fa-arrow-right ml-1"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Card 4 -->
+      <div onclick="showProject(3)" class="work-card group cursor-pointer bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col">
+        <div class="relative aspect-[16/10] overflow-hidden bg-zinc-800">
+          <img src="assets/images/pool-hardscape.jpg" alt="Custom fabricated modern steel hardscaping elements installed around a beautiful inground pool in West Virginia at golden hour, including thick steel planters and architectural features" class="portfolio-img absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex-1">
+            <div class="uppercase text-orange-500 text-xs tracking-widest mb-1">FOR THE PROS</div>
+            <h4 class="font-semibold text-2xl tracking-[-0.5px]">Pool &amp; Hardscaping Steel</h4>
+            <p class="text-zinc-400 mt-2 text-[15px]">Planters, rails, structural features, and architectural metal for high-end landscaping and pool companies.</p>
+          </div>
+          <div class="mt-5 inline-flex items-center text-sm text-orange-500 group-hover:gap-x-2 gap-x-1 transition-all">
+            View details <i class="fa-solid fa-arrow-right ml-1"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Card 5 -->
+      <div onclick="showProject(4)" class="work-card group cursor-pointer bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col">
+        <div class="relative aspect-[16/10] overflow-hidden bg-zinc-800">
+          <img src="assets/images/welding-action.jpg" alt="Brian Wuerstlin MIG welding a large steel component on a heavy trailer frame inside his clean, well-organized West Virginia fabrication shop, dramatic welding arc lighting" class="portfolio-img absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex-1">
+            <div class="uppercase text-orange-500 text-xs tracking-widest mb-1">IN THE SHOP</div>
+            <h4 class="font-semibold text-2xl tracking-[-0.5px]">25-Foot Dual-Axle Trailer</h4>
+            <p class="text-zinc-400 mt-2 text-[15px]">Previous full build. Same obsessive attention to frame, hydraulics, and finish quality.</p>
+          </div>
+          <div class="mt-5 inline-flex items-center text-sm text-orange-500 group-hover:gap-x-2 gap-x-1 transition-all">
+            View details <i class="fa-solid fa-arrow-right ml-1"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Card 6 -->
+      <div onclick="showProject(5)" class="work-card group cursor-pointer bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col">
+        <div class="relative aspect-[16/10] overflow-hidden bg-zinc-800">
+          <img src="assets/images/hero.jpg" alt="Brian Wuerstlin working on a large custom steel fabrication project in his modern shop with rolling West Virginia hills in the background, dramatic golden hour light" class="portfolio-img absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex-1">
+            <div class="uppercase text-orange-500 text-xs tracking-widest mb-1">YOUR IDEA, BUILT</div>
+            <h4 class="font-semibold text-2xl tracking-[-0.5px]">Custom From Your Sketch</h4>
+            <p class="text-zinc-400 mt-2 text-[15px]">Napkin drawings, wild concepts, or “I need something that doesn’t exist yet.” I’ll figure it out.</p>
+          </div>
+          <div class="mt-5 inline-flex items-center text-sm text-orange-500 group-hover:gap-x-2 gap-x-1 transition-all">
+            View details <i class="fa-solid fa-arrow-right ml-1"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="bg-zinc-900 border-y border-zinc-800 py-20">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
+      <div class="max-w-2xl mb-12">
+        <div class="uppercase tracking-[3px] text-orange-500 text-sm font-semibold">NO SURPRISES. JUST RESULTS.</div>
+        <h3 class="heading-font text-5xl tracking-[-2px] mt-2">How we get it done</h3>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="process-step bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+          <div class="text-orange-500 text-5xl font-semibold tracking-[-2px] mb-4">01</div>
+          <h4 class="font-semibold text-2xl tracking-tight mb-3">Tell me the idea</h4>
+          <p class="text-zinc-400">Call, text, or meet me. Send photos, sketches, or just describe what you need. The crazier the better.</p>
+        </div>
+        <div class="process-step bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+          <div class="text-orange-500 text-5xl font-semibold tracking-[-2px] mb-4">02</div>
+          <h4 class="font-semibold text-2xl tracking-tight mb-3">Sketch &amp; quote</h4>
+          <p class="text-zinc-400">I’ll come back with a clear plan, timeline, and honest price. No fluff. No hidden costs.</p>
+        </div>
+        <div class="process-step bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+          <div class="text-orange-500 text-5xl font-semibold tracking-[-2px] mb-4">03</div>
+          <h4 class="font-semibold text-2xl tracking-tight mb-3">I fabricate it</h4>
+          <p class="text-zinc-400">In the shop or on site. Every weld, every cut, every detail — done right the first time.</p>
+        </div>
+        <div class="process-step bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+          <div class="text-orange-500 text-5xl font-semibold tracking-[-2px] mb-4">04</div>
+          <h4 class="font-semibold text-2xl tracking-tight mb-3">You use it</h4>
+          <p class="text-zinc-400">Pickup, delivery, or install. Then you get back to work with something that actually holds up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-screen-2xl mx-auto px-6 lg:px-10 pt-20 pb-24">
+    <div class="max-w-4xl">
+      <div class="uppercase tracking-[3px] text-orange-500 text-sm font-semibold">LET’S BUILD SOMETHING</div>
+      <h3 class="heading-font text-6xl tracking-[-2.5px] leading-none mt-3 mb-4">Ready when you are.</h3>
+      <p class="text-2xl text-zinc-300">I answer the phone. I show up. I get it done.</p>
+    </div>
+
+    <div class="mt-10 grid lg:grid-cols-5 gap-x-10 gap-y-10">
+      <!-- Direct Contact -->
+      <div class="lg:col-span-2">
+        <div class="space-y-4">
+          <a href="tel:+1-240-818-1903" 
+             class="group flex items-center gap-x-5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-orange-600 transition-all p-6 rounded-3xl">
+            <div class="w-14 h-14 rounded-2xl bg-orange-600 flex items-center justify-center text-3xl shrink-0">
+              <i class="fa-solid fa-phone text-white"></i>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-widest text-orange-500">Call or text</div>
+              <div class="text-3xl font-semibold tracking-tighter group-hover:text-orange-500 transition-colors">240-818-1903</div>
+            </div>
+          </a>
+
+          <a href="mailto:bwmustang90@gmail.com" 
+             class="flex items-center gap-x-5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-orange-600 transition-all p-6 rounded-3xl">
+            <div class="w-14 h-14 rounded-2xl bg-zinc-800 flex items-center justify-center text-3xl shrink-0">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-widest text-zinc-400">Email</div>
+              <div class="text-xl font-medium tracking-tight">bwmustang90@gmail.com</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="mt-8 text-sm text-zinc-300 leading-relaxed">
+          Based in Falling Waters, WV.<br>
+          I’ll travel up to 60 miles for the right job.<br>
+          <span class="text-orange-500">No social media yet</span> — this site is the start.
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="lg:col-span-3 bg-zinc-900 border border-zinc-800 rounded-3xl p-8 lg:p-10">
+        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6">
+            <div>
+              <label for="name" class="text-xs tracking-widest text-zinc-400 block mb-1.5">YOUR NAME</label>
+              <input type="text" id="name" required 
+                     class="w-full bg-zinc-950 border border-zinc-700 focus:border-orange-600 rounded-2xl px-5 py-3.5 text-lg outline-none">
+            </div>
+            <div>
+              <label for="phone" class="text-xs tracking-widest text-zinc-400 block mb-1.5">PHONE NUMBER</label>
+              <input type="tel" id="phone" required 
+                     class="w-full bg-zinc-950 border border-zinc-700 focus:border-orange-600 rounded-2xl px-5 py-3.5 text-lg outline-none">
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <label for="project" class="text-xs tracking-widest text-zinc-400 block mb-1.5">WHAT ARE YOU TRYING TO BUILD?</label>
+            <textarea id="project" rows="4" required 
+                      class="w-full bg-zinc-950 border border-zinc-700 focus:border-orange-600 rounded-3xl px-5 py-4 text-lg resize-y outline-none"
+                      placeholder="Dump trailer, custom mower, V-plow, hardscaping steel, or something nobody has ever asked for..."></textarea>
+          </div>
+
+          <button type="submit"
+                  class="mt-6 w-full bg-orange-600 hover:bg-orange-500 active:bg-orange-700 transition-all text-white text-lg font-semibold py-4 rounded-2xl flex items-center justify-center gap-x-2">
+            <span>Send the Details</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+          
+          <p class="text-center text-xs text-zinc-400 mt-4">I usually reply the same day. Or just call — it’s faster.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800 py-9 text-sm">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row md:items-center justify-between gap-y-3 text-zinc-400">
+      <div>© <span id="year"></span> Crazy Boy Endeavors — Brian Wuerstlin. All rights reserved.</div>
+      <div class="flex items-center gap-x-5 text-xs md:text-sm">
+        <div>Falling Waters, West Virginia</div>
+        <div class="hidden md:block w-px h-3 bg-zinc-700"></div>
+        <div>Honest work. No shortcuts.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modals -->
+  <div id="modal-backdrop" onclick="closeModal()" class="hidden fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4">
+    <div onclick="event.stopImmediatePropagation()" id="modal-content"
+         class="modal bg-zinc-900 border border-zinc-700 rounded-3xl max-w-3xl w-full max-h-[92dvh] overflow-auto">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div id="success-toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-zinc-900 border border-orange-600 text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-x-3 z-[110]">
+    <i class="fa-solid fa-check-circle text-orange-500 text-xl"></i>
+    <span id="toast-message">Thanks — I’ll call or text you today.</span>
+  </div>
+
+  <script>
+    // Tailwind script
+    function initializeTailwind() {
+      document.documentElement.style.setProperty('--accent', '#f97316');
+    }
+
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) {
+        mobileMenu.classList.add('hidden');
+        mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        mobileBtn.setAttribute('aria-label', 'Open menu');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        mobileBtn.innerHTML = '<i class="fa-solid fa-times"></i>';
+        mobileBtn.setAttribute('aria-label', 'Close menu');
+        mobileBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Initialize ARIA state
+    mobileBtn.setAttribute('aria-label', 'Open menu');
+    mobileBtn.setAttribute('aria-expanded', 'false');
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        mobileBtn.setAttribute('aria-label', 'Open menu');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Project data
+    const projects = [
+      {
+        title: "16-Foot Dual-Axle Dump Trailer",
+        subtitle: "Current build • Full scratch fabrication",
+        image: "assets/images/trailer-16.jpg",
+        description: "Complete ground-up build of a heavy-duty 16-foot dual-axle dump trailer. I fabricated the entire I-beam frame, the bed, all hydraulic components, and the full electrical system for state inspection. This one is built to work hard for years.",
+        details: [
+          "Full I-beam frame construction",
+          "Heavy-duty hydraulic lift system",
+          "Complete wiring for legal road use",
+          "Dual-axle with commercial-grade wheels",
+          "Clean, professional welds throughout"
+        ],
+        location: "In progress — Falling Waters shop"
+      },
+      {
+        title: "Custom Articulating V-Plow",
+        subtitle: "Heavy plate steel • Hydraulic wings",
+        image: "assets/images/v-plow.jpg",
+        description: "A serious V-plow built from thick plate steel with fully articulating hydraulic wings. Designed and fabricated from scratch to handle the real winter conditions of the West Virginia panhandle. Mounted and ready for the toughest storms.",
+        details: [
+          "Thick plate steel construction",
+          "Articulating hydraulic wing system",
+          "Heavy-duty cylinders and mounts",
+          "Professional finish and welds",
+          "Proven in real snow and ice"
+        ],
+        location: "Delivered • Eastern Panhandle"
+      },
+      {
+        title: "Hybrid Zero-Turn Mower",
+        subtitle: "Grave + John Deere Frankenstein legend",
+        image: "assets/images/mower-hybrid.jpg",
+        description: "The project that started it all for a lot of people around here. I took a Grave lead zero-turn and a John Deere and combined the best of both into one ridiculously capable custom mower. Reinforced deck, custom fabrication throughout, and it cuts like nothing else on the market.",
+        details: [
+          "Complete custom hybrid platform",
+          "Extensive steel reinforcement",
+          "Unique fabricated components",
+          "Built for commercial-level abuse",
+          "Still talked about years later"
+        ],
+        location: "Delivered • Local property"
+      },
+      {
+        title: "Pool & Hardscaping Steel",
+        subtitle: "Custom architectural & structural work",
+        image: "assets/images/pool-hardscape.jpg",
+        description: "Fabricated a full suite of modern steel elements for a high-end pool installation — thick planters, structural landscape features, railings, and custom pieces that tie the entire hardscape together. Clean welds, refined finish, built to last decades outdoors.",
+        details: [
+          "Custom steel planters and benches",
+          "Structural pool area components",
+          "Integrated with stone and water",
+          "Weather-resistant finishes",
+          "Collaboration with pool contractors"
+        ],
+        location: "Installed • West Virginia"
+      },
+      {
+        title: "25-Foot Dual-Axle Dump Trailer",
+        subtitle: "Previous full custom build",
+        image: "assets/images/welding-action.jpg",
+        description: "One of several large trailers I’ve built from the ground up. 25 feet of serious dual-axle capacity with full hydraulic dump, heavy frame, and the same obsessive attention to detail I put into every project. These trailers are still out there working hard.",
+        details: [
+          "25-foot heavy-duty frame",
+          "Commercial dual-axle running gear",
+          "Full hydraulic dump system",
+          "Built for years of hard use",
+          "Multiple units delivered to clients"
+        ],
+        location: "Delivered • Multiple clients"
+      },
+      {
+        title: "Custom Fabrication From Your Idea",
+        subtitle: "The reason the name exists",
+        image: "assets/images/hero.jpg",
+        description: "This is the heart of Crazy Boy Endeavors. Bring me the sketch on the back of a napkin, the half-baked idea, or the thing you can’t find anywhere else. I’ll figure out how to make it real in steel. That’s the whole point of the shop.",
+        details: [
+          "Design consultation included",
+          "Any scale — small to industrial",
+          "Mobile welding available",
+          "No project too strange or specific",
+          "Honest timelines and pricing"
+        ],
+        location: "Your idea • My shop"
+      }
+    ];
+
+    // Show project modal
+    function showProject(index) {
+      const project = projects[index];
+      const modal = document.getElementById('modal-backdrop');
+      const content = document.getElementById('modal-content');
+
+      content.innerHTML = `
+        <div class="relative">
+          <button onclick="closeModal()" 
+                  class="absolute top-5 right-5 z-10 w-10 h-10 flex items-center justify-center bg-black/60 hover:bg-black/80 text-white rounded-full text-xl transition">
+            <i class="fa-solid fa-times"></i>
+          </button>
+          
+          <img src="${project.image}" alt="${project.title}" class="w-full rounded-t-3xl aspect-[16/9] object-cover">
+          
+          <div class="p-8 lg:p-10">
+            <div class="uppercase tracking-[2.5px] text-orange-500 text-xs mb-1">${project.subtitle}</div>
+            <h3 class="heading-font text-4xl tracking-[-1.5px]">${project.title}</h3>
+            
+            <p class="mt-5 text-lg text-zinc-300 leading-relaxed">${project.description}</p>
+            
+            <div class="mt-8">
+              <div class="text-xs uppercase tracking-widest text-zinc-400 mb-3">KEY DETAILS</div>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-[15px]">
+                ${project.details.map(d => `<li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-orange-500 mt-1"></i> <span>${d}</span></li>`).join('')}
+              </ul>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-zinc-700 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+              <div class="px-4 py-2 bg-zinc-800 rounded-2xl flex items-center gap-x-2">
+                <i class="fa-solid fa-map-marker-alt text-orange-500"></i>
+                <span>${project.location}</span>
+              </div>
+              <button onclick="closeModal(); document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+                      class="px-6 py-2 bg-orange-600 hover:bg-orange-500 rounded-2xl font-semibold text-sm transition">
+                START A SIMILAR PROJECT
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal-backdrop');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Contact form handler (mailto + nice toast)
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const project = document.getElementById('project').value.trim();
+
+      const subject = encodeURIComponent(`Fabrication inquiry from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nPhone: ${phone}\n\nProject details:\n${project}\n\n---\nSent from crazyboyendeavors.com`
+      );
+
+      // Open mail client
+      window.location.href = `mailto:bwmustang90@gmail.com?subject=${subject}&body=${body}`;
+
+      // Show success state
+      const toast = document.getElementById('success-toast');
+      const msg = document.getElementById('toast-message');
+      msg.textContent = "Thanks — opening your mail app. Or just call me directly at 240-818-1903.";
+      
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+
+      // Reset form
+      e.target.reset();
+
+      // Hide toast after delay
+      setTimeout(() => {
+        toast.classList.remove('flex');
+        toast.classList.add('hidden');
+      }, 6200);
+    }
+
+    // Close modal on escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('modal-backdrop');
+        if (!modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      }
+    });
+
+    // Set current year
+    function setYear() {
+      document.getElementById('year').textContent = new Date().getFullYear();
+    }
+
+    // Smooth scroll for anchor links (improved)
+    function enableSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            const navHeight = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - navHeight;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    }
+
+    // Keyboard accessibility for cards
+    function makeCardsAccessible() {
+      document.querySelectorAll('.work-card').forEach((card, index) => {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `View details for ${projects[index].title}`);
+        
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            showProject(index);
+          }
+        });
+      });
+    }
+
+    // Initialize everything
+    function init() {
+      initializeTailwind();
+      setYear();
+      enableSmoothScroll();
+      makeCardsAccessible();
+      
+      // Preload a couple key images for snappier feel
+      const preloadImages = ['assets/images/hero.jpg', 'assets/images/portrait.jpg'];
+      preloadImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+
+      // Optional: subtle console branding
+      console.log('%c[Crazy Boy Endeavors] Site ready — built with real custom images and zero corporate nonsense.', 'color:#3f3f46;font-size:9px');
+    }
+
+    // Boot
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
