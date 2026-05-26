@@ -522,23 +522,28 @@
 
       <!-- Form -->
       <div class="lg:col-span-3 bg-zinc-900 border border-zinc-800 rounded-3xl p-8 lg:p-10">
-        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+        <form action="https://formsubmit.co/CodyP10@gmail.com" method="POST">
+          <!-- FormSubmit configuration -->
+          <input type="hidden" name="_subject" value="New Inquiry - Crazy Boy Endeavors Website">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://codyp10.github.io/crazy-boy-endeavors/#thank-you">
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6">
             <div>
               <label for="name" class="text-xs tracking-widest text-zinc-400 block mb-1.5">YOUR NAME</label>
-              <input type="text" id="name" required 
+              <input type="text" id="name" name="name" required 
                      class="w-full bg-zinc-950 border border-zinc-700 focus:border-orange-600 rounded-2xl px-5 py-3.5 text-lg outline-none">
             </div>
             <div>
               <label for="phone" class="text-xs tracking-widest text-zinc-400 block mb-1.5">PHONE NUMBER</label>
-              <input type="tel" id="phone" required 
+              <input type="tel" id="phone" name="phone" required 
                      class="w-full bg-zinc-950 border border-zinc-700 focus:border-orange-600 rounded-2xl px-5 py-3.5 text-lg outline-none">
             </div>
           </div>
 
           <div class="mt-6">
             <label for="project" class="text-xs tracking-widest text-zinc-400 block mb-1.5">WHAT ARE YOU TRYING TO BUILD?</label>
-            <textarea id="project" rows="4" required 
+            <textarea id="project" name="project" rows="4" required 
                       class="w-full bg-zinc-950 border border-zinc-700 focus:border-orange-600 rounded-3xl px-5 py-4 text-lg resize-y outline-none"
                       placeholder="Dump trailer, custom mower, V-plow, hardscaping steel, or something nobody has ever asked for..."></textarea>
           </div>
@@ -551,6 +556,34 @@
           
           <p class="text-center text-xs text-zinc-400 mt-4">I usually reply the same day. Or just call — it’s faster.</p>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thank You Section -->
+  <section id="thank-you" class="bg-zinc-900 border-t border-zinc-800 py-20">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="text-orange-500 text-6xl mb-6">
+          <i class="fa-solid fa-check-circle"></i>
+        </div>
+        <h2 class="heading-font text-5xl tracking-[-2px] mb-4">Thanks — Message Sent</h2>
+        <p class="text-xl text-zinc-300 mb-8">
+          Your inquiry has been sent directly to Brian. He usually responds the same day.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#work" 
+             class="px-8 py-3 border border-zinc-700 hover:bg-zinc-800 rounded-2xl font-medium transition-colors">
+            See More Work
+          </a>
+          <a href="#contact" 
+             class="px-8 py-3 bg-orange-600 hover:bg-orange-500 rounded-2xl font-semibold transition-colors">
+            Back to Contact
+          </a>
+        </div>
+        <p class="mt-8 text-sm text-zinc-500">
+          Or just call or text: <a href="tel:+1-240-818-1903" class="text-orange-500 hover:underline">240-818-1903</a>
+        </p>
       </div>
     </div>
   </section>
@@ -760,40 +793,6 @@
       modal.classList.remove('flex');
       modal.classList.add('hidden');
       document.body.style.overflow = '';
-    }
-
-    // Contact form handler (mailto + nice toast)
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const project = document.getElementById('project').value.trim();
-
-      const subject = encodeURIComponent(`Fabrication inquiry from ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nPhone: ${phone}\n\nProject details:\n${project}\n\n---\nSent from crazyboyendeavors.com`
-      );
-
-      // Open mail client
-      window.location.href = `mailto:bwmustang90@gmail.com?subject=${subject}&body=${body}`;
-
-      // Show success state
-      const toast = document.getElementById('success-toast');
-      const msg = document.getElementById('toast-message');
-      msg.textContent = "Thanks — opening your mail app. Or just call me directly at 240-818-1903.";
-      
-      toast.classList.remove('hidden');
-      toast.classList.add('flex');
-
-      // Reset form
-      e.target.reset();
-
-      // Hide toast after delay
-      setTimeout(() => {
-        toast.classList.remove('flex');
-        toast.classList.add('hidden');
-      }, 6200);
     }
 
     // Close modal on escape
